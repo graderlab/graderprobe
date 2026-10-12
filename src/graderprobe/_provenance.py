@@ -21,7 +21,7 @@ _cache_dir = Path(
     os.environ.get("GRADERPROBE_CACHE_DIR", str(Path.home() / ".cache" / "graderprobe"))
 )
 
-BUILD_SERIAL = "9589683a-0143-45c7-a65d-dd166ffc0856"  # rewritten by ops/bump_build.py before each release
+BUILD_SERIAL = "e1beffca-e7d7-4f55-8e5b-19358e7a16e2"  # rewritten by ops/bump_build.py before each release
 
 
 def _load_or_create_install_id() -> str:

@@ -1,0 +1,50 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "graderprobe"
+version = "0.1.0"
+description = "Inspect the LLM judge, sandbox, and scoring pipeline your submission will be scored in: judge profile, documented biases, EM normalization, provenance markers."
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = []            # hard requirement: stdlib only
+license = { text = "MIT" }
+authors = [{ name = "GraderLab", email = "asagiri-shi@proton.me" }]
+keywords = [
+  "llm", "llm-judge", "llm-evaluation", "eval-harness", "evaluation",
+  "grader", "judge", "scorer", "scoring", "benchmark", "rubric", "bias",
+  "sandbox", "exact-match", "normalization", "provenance", "signatures",
+]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Environment :: Console",
+  "Intended Audience :: Developers",
+  "Intended Audience :: Science/Research",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+  "Topic :: Software Development :: Testing",
+  "Topic :: Security",
+]
+
+[project.urls]
+Homepage      = "https://ashigiri.com/graderlab"
+Repository    = "https://github.com/graderlab/graderprobe"
+Issues        = "https://github.com/graderlab/graderprobe/issues"
+Documentation = "https://ashigiri.com/graderlab"
+Changelog     = "https://github.com/graderlab/graderprobe/releases"
+
+[project.scripts]
+graderprobe = "graderprobe.__main__:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/graderprobe"]
+
+[tool.hatch.build.targets.sdist]
+include = ["src/graderprobe", "tests", "ops", "README.md", "LICENSE", "AGENTS.md", "pyproject.toml"]
